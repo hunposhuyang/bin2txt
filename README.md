@@ -1,4 +1,8 @@
 # bin2txt
+# 构建方法
+```
+clang main.cpp -o bin2txt.exe -std=c++17
+```
 # 使用方法
 ```
 -c path/to/txt path/to/bin baseOffset
