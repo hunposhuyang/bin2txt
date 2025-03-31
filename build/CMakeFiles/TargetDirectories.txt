@@ -1,0 +1,3 @@
+F:/GitRepos/bin2txt/build/CMakeFiles/bin2txt.dir
+F:/GitRepos/bin2txt/build/CMakeFiles/edit_cache.dir
+F:/GitRepos/bin2txt/build/CMakeFiles/rebuild_cache.dir
