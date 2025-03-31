@@ -1,3 +1,3 @@
 "C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\bin2txt.dir/objects.a
 C:\mingw64\bin\ar.exe qc CMakeFiles\bin2txt.dir/objects.a @CMakeFiles\bin2txt.dir\objects1.rsp
-c:\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\bin2txt.dir/objects.a -Wl,--no-whole-archive -o F:\GitRepos\bin2txt\bin2txt.exe -Wl,--out-implib,libbin2txt.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\bin2txt.dir\linkLibs.rsp
+C:\mingw64\bin\g++.exe -Wl,--whole-archive CMakeFiles\bin2txt.dir/objects.a -Wl,--no-whole-archive -o F:\GitRepos\bin2txt\bin2txt.exe -Wl,--out-implib,libbin2txt.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\bin2txt.dir\linkLibs.rsp

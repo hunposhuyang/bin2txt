@@ -1,7 +1,7 @@
 # bin2txt
 # 构建方法
 ```
-clang main.cpp -o bin2txt.exe -std=c++17
+VS code 使用cmake tool扩展，GCC工具包进行构建
 ```
 # 使用方法
 ```

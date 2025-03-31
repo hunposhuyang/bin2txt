@@ -75,15 +75,15 @@ CMakeFiles/bin2txt.dir/main.cpp.obj: CMakeFiles/bin2txt.dir/flags.make
 CMakeFiles/bin2txt.dir/main.cpp.obj: F:/GitRepos/bin2txt/main.cpp
 CMakeFiles/bin2txt.dir/main.cpp.obj: CMakeFiles/bin2txt.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\GitRepos\bin2txt\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/bin2txt.dir/main.cpp.obj"
-	c:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bin2txt.dir/main.cpp.obj -MF CMakeFiles\bin2txt.dir\main.cpp.obj.d -o CMakeFiles\bin2txt.dir\main.cpp.obj -c F:\GitRepos\bin2txt\main.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bin2txt.dir/main.cpp.obj -MF CMakeFiles\bin2txt.dir\main.cpp.obj.d -o CMakeFiles\bin2txt.dir\main.cpp.obj -c F:\GitRepos\bin2txt\main.cpp
 
 CMakeFiles/bin2txt.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bin2txt.dir/main.cpp.i"
-	c:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\GitRepos\bin2txt\main.cpp > CMakeFiles\bin2txt.dir\main.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\GitRepos\bin2txt\main.cpp > CMakeFiles\bin2txt.dir\main.cpp.i
 
 CMakeFiles/bin2txt.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bin2txt.dir/main.cpp.s"
-	c:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\GitRepos\bin2txt\main.cpp -o CMakeFiles\bin2txt.dir\main.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\GitRepos\bin2txt\main.cpp -o CMakeFiles\bin2txt.dir\main.cpp.s
 
 # Object files for target bin2txt
 bin2txt_OBJECTS = \
