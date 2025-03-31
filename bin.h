@@ -24,7 +24,7 @@ private:
     std::string filename; // 文件名
     std::vector<stringTable> stringTables; // 存储字符串表的动态数组
     std::string output = "";
-    bool Bin::isValidString(const std::string& str);
+    bool isValidString(const std::string& str);
 };
 
 Bin::Bin(std::string filename) {
