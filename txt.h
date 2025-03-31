@@ -14,7 +14,7 @@ class TXT
 public:
     std::string filename = "";
     std::string output = "";
-    uintptr_t base_offset = NULL;
+    uintptr_t base_offset = 0;
 
     TXT(const char* strfilepath, const char* baseOffset, const char* output);
     ~TXT();
