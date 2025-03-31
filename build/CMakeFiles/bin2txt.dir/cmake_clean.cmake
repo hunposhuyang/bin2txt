@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/bin2txt.dir/main.cpp.obj"
   "CMakeFiles/bin2txt.dir/main.cpp.obj.d"
-  "bin2txt.exe"
-  "bin2txt.exe.manifest"
-  "bin2txt.pdb"
+  "F:/GitRepos/bin2txt/bin2txt.exe"
+  "F:/GitRepos/bin2txt/bin2txt.exe.manifest"
+  "F:/GitRepos/bin2txt/bin2txt.pdb"
   "libbin2txt.dll.a"
 )
 

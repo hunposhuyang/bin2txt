@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "bin2txt.exe"
+			"path" : "F:/GitRepos/bin2txt/bin2txt.exe"
 		},
 		{
-			"path" : "bin2txt.pdb"
+			"path" : "F:/GitRepos/bin2txt/bin2txt.pdb"
 		}
 	],
 	"backtrace" : 1,
