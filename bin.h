@@ -58,49 +58,59 @@ void Bin::initData() {
     fs.close();
 }
 
-bool Bin::isValidString(const std::string& str) {
-    if (str.empty()) {
-        return false;
-    }
-
-    int printable_count = 0;
-    bool has_utf8 = false;
+// 辅助函数：验证字符串是否为有效UTF-8编码
+bool isValidUTF8(const std::string& str) {
+    const unsigned char* data = (const unsigned char*)str.data();
+    size_t len = str.size();
     size_t i = 0;
-
-    while (i < str.size()) {
-        unsigned char c = str[i];
-
-        // 处理UTF-8多字节字符
-        if (c >= 0x80) {  // UTF-8字符开始
-            int follow_bytes = 0;
-            if ((c & 0xE0) == 0xC0) follow_bytes = 1;      // 2字节字符
-            else if ((c & 0xF0) == 0xE0) follow_bytes = 2; // 3字节字符
-            else if ((c & 0xF8) == 0xF0) follow_bytes = 3; // 4字节字符
-
-            // 验证后续字节是否符合格式(10xxxxxx)
-            bool valid = true;
-            for (int j = 0; j < follow_bytes; ++j) {
-                if (++i >= str.size() || (str[i] & 0xC0) != 0x80) {
-                    valid = false;
-                    break;
-                }
-            }
-
-            if (valid) {
-                printable_count += follow_bytes + 1;  // 整个UTF-8字符计为可打印
-                has_utf8 = true;
-            }
+    while (i < len) {
+        unsigned char c = data[i];
+        if (c < 0x80) {
+            i++;
+        } else if ((c & 0xE0) == 0xC0) { // 2字节
+            if (i + 1 >= len || (data[i+1] & 0xC0) != 0x80) return false;
+            i += 2;
+        } else if ((c & 0xF0) == 0xE0) { // 3字节
+            if (i + 2 >= len || 
+                (data[i+1] & 0xC0) != 0x80 || 
+                (data[i+2] & 0xC0) != 0x80) return false;
+            i += 3;
+        } else if ((c & 0xF8) == 0xF0) { // 4字节
+            if (i + 3 >= len || 
+                (data[i+1] & 0xC0) != 0x80 || 
+                (data[i+2] & 0xC0) != 0x80 || 
+                (data[i+3] & 0xC0) != 0x80) return false;
+            i += 4;
+        } else {
+            return false; // 非法起始字节
         }
-        // ASCII可打印字符（排除控制字符）
-        else if (c >= 0x20 && c != 0x7F) {  // 0x20-0x7E为可打印ASCII
-            printable_count++;
-        }
-        i++;
     }
+    return true;
+}
 
-    // 调整判定条件：包含UTF-8字符时降低比例要求
-    const int threshold = has_utf8 ? 50 : 70;
-    return (printable_count * 100 / str.size() >= threshold);
+bool Bin::isValidString(const std::string& str) {
+    if (str.empty()) return false;
+
+    // 首先验证整个字符串是有效的UTF-8
+    if (!isValidUTF8(str)) return false;
+
+    for (size_t i = 0; i < str.size();) {
+        unsigned char c = str[i];
+        if (c < 0x80) { // ASCII字符
+            // 排除控制字符（0x00-0x1F）和DEL（0x7F）
+            if (c < 0x20 || c == 0x7F) return false;
+            i++;
+        } else { // 非ASCII字符（UTF-8多字节）
+            // 已通过isValidUTF8验证，直接跳过该字符
+            int len = 0;
+            if ((c & 0xE0) == 0xC0) len = 2;
+            else if ((c & 0xF0) == 0xE0) len = 3;
+            else if ((c & 0xF8) == 0xF0) len = 4;
+            else return false; // 不应触发，因已验证UTF-8有效性
+            i += len;
+        }
+    }
+    return true;
 }
 
 void Bin::crateOffsetFile() {
