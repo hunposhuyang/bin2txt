@@ -1,8 +1,0 @@
-[
-{
-  "directory": "F:/GitRepos/bin2txt/build",
-  "command": "C:\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\bin2txt.dir\\main.cpp.obj -c F:\\GitRepos\\bin2txt\\main.cpp",
-  "file": "F:/GitRepos/bin2txt/main.cpp",
-  "output": "CMakeFiles/bin2txt.dir/main.cpp.obj"
-}
-]
